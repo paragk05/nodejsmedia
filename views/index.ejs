@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+  body { 
+background: url(images/bg.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+input{
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid rgb(23, 201, 7);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top: 15px;
+  margin-left: 15px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+input:focus{
+  width: 70%;
+}
+form button{
+  margin-top :15px;
+}
+div a{
+  margin: 7px;
+}
+#cards
+{
+  padding-top: 10%;
+}
+
+#file
+{
+  margin-top: 50px;
+  width: 60%;
+}
+
+
+  </style>
+
+</head>
+<body>
+
+
+
+  <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+    <ul class="navbar-nav">
+      <li class="spinner-border text-warning"><li class="spinner-border text-dark"></li></li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Department</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">School</a>
+      </li>
+     
+    </ul>
+
+
+    
+  </nav>
+
+ 
+
+
+  <div class="container" id="cards">
+      <div class="row">
+        
+          <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4 col-12 ">
+    
+              <div class="card bg-default">
+                <img class="card-img-top mx-auto d-block img-fluid " src="images/student.png" alt="Card image" style="width:50%">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Student Login</h4>
+                  
+                   
+                  <a href="#" class="btn btn-warning mx-auto d-block" data-toggle="modal" data-target="#StudLModal">Login</a>
+
+                  
+                  <a href="#" class="btn btn-success mx-auto d-block" data-toggle="modal" data-target="#StudRModal">Register</a>
+
+
+
+                  <div class="modal fade" id="StudLModal">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Student Login</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                                                            
+                                <form method="POST" action="/stud_login">
+                                    <label for="suser"><b>Username</b></label>
+                                    <input type="text" name="suser" placeholder="Username"> <br>
+                                    <label for="spass"><b>Password</b></label>
+                                    <input type="password" name="spass" placeholder="Password"><br>
+                                    <button type="submit" name="submit" class="btn btn-success float-right">Login</button>
+                                  </form>
+                                  <br>
+                                  <a href="#">Forget Password</a>
+  
+                          </div>
+                          
+                          
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="StudRModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Student Register</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              
+                                <form method="POST" action="/stud_reg">
+
+                                  
+                                    <label for="sfirst"><b>Firstname  :</b></label>
+                                    <input type="text" name="sfirst" placeholder="Firstname"> <br>
+                                    <label for="slast"><b>Lastname    :</b></label>
+                                    <input type="text" name="slast" placeholder="Last name"> <br>
+
+                                    <label for="sdepa"><b>Department  :</b></label>
+                                    <input type="text" name="sdepa" placeholder="Department"  style="margin-left: -1px;"> <br>
+
+                                    <label for="syear"><b>Year    :</b></label>
+                                    <input type="text" name="syear" placeholder="Year" style="margin-left: 55px;"> <br>
+
+                                    <label for="suser"><b>Username    :</b></label>
+                                    <input type="text" name="suser" placeholder="Username"> <br>
+
+                                    
+
+                                    <label for="spass"><b>Password    :</b></label>
+                                    <input type="password" name="spass" placeholder="Password"><br>
+
+                                    <button type="submit" name="submit" class="btn btn-success float-right">Register</button>
+                                  </form>
+                            </div>
+                            
+                            
+                          </div>
+                        </div>
+                      </div>
+                
+                   
+                </div>
+              </div>
+              
+              
+    
+          </div>
+
+          <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4 col-12">
+  
+              <div class="card bg-default">
+                <img class="card-img-top mx-auto d-block img-fluid " src="images/teacher.png" alt="Card image" style="width:50%">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Teacher Login</h4>
+                  
+                  <a href="#" class="btn btn-warning mx-auto d-block" data-toggle="modal" data-target="#TeaLModal">Login</a>
+
+                  
+                  <a href="#" class="btn btn-success mx-auto d-block" data-toggle="modal" data-target="#TeaRModal">Register</a>
+
+
+                  <div class="modal fade" id="TeaLModal">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Teacher Login</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            
+                              <form method="POST">
+                                  <label for="tuser"><b>Username</b></label>
+                                  <input type="text" name="tuser" placeholder="Username"> <br>
+                                  <label for="tpass"><b>Password</b></label>
+                                  <input type="password" name="tpass" placeholder="Password"><br>
+                                  <button type="submit" name="submit" class="btn btn-success float-right">Login</button>
+                                </form>
+                          </div>
+                          
+                        
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="TeaRModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                          
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Teacher Register</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form method="POST">
+
+                                  
+                                    <label for="tfirst"><b>Firstname  :</b></label>
+                                    <input type="text" name="tname" placeholder="Firstname"> <br>
+                                    <label for="tlast"><b>Lastname    :</b></label>
+                                    <input type="text" name="tlast" placeholder="Last name"> <br>
+
+                                    <label for="tdepa"><b>Department  :</b></label>
+                                    <input type="text" name="tdepa" placeholder="Department"  style="margin-left: -1px;"> <br>
+
+                                    <label for="tsubj"><b>Subject    :</b></label>
+                                    <input type="text" name="tsubj" placeholder="Subject" style="margin-left: 30px;"> <br>
+
+                                    <label for="tuser"><b>Username    :</b></label>
+                                    <input type="text" name="tuser" placeholder="Username"> <br>
+
+                                    
+
+                                    <label for="tpass"><b>Password    :</b></label>
+                                    <input type="password" name="tpass" placeholder="Password"><br>
+
+                                    <button type="submit" name="submit" class="btn btn-success float-right">Register</button>
+                                  </form>
+                            </div>
+                            
+                            
+                            
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                </div>
+              </div>
+              
+              
+    
+          </div>
+
+          <div class="col-md-4 col-xl-4 col-lg-4 col-sm-4 col-12">
+  
+              <div class="card bg-default">
+                <img class="card-img-top mx-auto d-block img-fluid " src="../html/images/principal.png" alt="Card image" style="width:50%">
+                <div class="card-body">
+                  <h4 class="card-title text-center">Library Login</h4>
+                  
+                   
+                  <a href="#" class="btn btn-warning mx-auto d-block" data-toggle="modal" data-target="#PrinLModal">Login</a>
+                  <br>
+                  <br>
+
+
+                  <div class="modal fade" id="PrinLModal">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Library Login</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <form method="POST">
+                              <label for="tuser"><b>Username</b></label>
+                              <input type="text" name="luser" placeholder="Username"> <br>
+                              <label for="tpass"><b>Password</b></label>
+                              <input type="password" name="lpass" placeholder="Password"><br>
+                              <button type="submit" name="submit" class="btn btn-success float-right">Login</button>
+                            </form>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+              
+              
+    
+          </div>
+
+          
+              <div class="container" id="file">
+                <div class="row">
+                  <form action="/upload" method="POST" enctype="multipart/form-data">
+                      <div class="custom-file mb-8">
+                        <input type="file" class="custom-file-input" name="myfile" accept="mp3">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <div><button type="submit" name="submit" class="btn btn-success">Upload</button></div>
+                      </div>
+                  </form>
+
+                </div>
+              </div>
+        
+
+          
+  </div>
+  </div>
+
+
+</body>
+</html>

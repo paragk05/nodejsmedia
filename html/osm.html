@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin=""/>
+
+             <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+ integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+ crossorigin=""></script>
+
+        <style>
+            #map{
+                height: 580px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="map"></div>
+
+
+        <script>
+
+        
+                if(navigator.geolocation)
+                {
+                    navigator.geolocation.getCurrentPosition(function(position)
+                    {
+                        var lati= position.coords.latitude;
+                        var longi=position.coords.longitude;
+
+                        console.log(lati);
+
+                        console.log(longi);
+
+                        var marker=L.marker([lati,longi]).addTo(mymap);
+                        marker.bindPopup('User at this Location').openPopup();
+
+
+                    });
+
+                }
+                else
+                console.log('NO GEO Location supports;')
+            
+            var mymap = L.map('map').setView([18.509628, 73.797073], 13);
+            
+
+            
+
+            const attribution= '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+            const tileUrl='http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+
+            const tiles=L.tileLayer(tileUrl,{attribution});
+
+            
+            tiles.addTo(mymap);
+            
+           
+            
+
+            
+            // async function getISS()
+            // {
+            //     const response= await fetch(api_url);
+            //     const data= await response.json();
+            //     const {lati,longi}=data;
+                
+            //     L.marker([lat,longi]).addTo(mymap);
+
+            //     marker.setView([lati,longi]);
+
+            //     document.getElementById('lat').textContent=lati;
+            //     document.getElementById('lon').textContent=longi;
+
+
+            // }
+
+            // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            // attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            // }).addTo(mymap);
+
+            
+        </script>
+
+
+    </body>
+</html>
